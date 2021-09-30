@@ -1257,7 +1257,12 @@ class GenericCall(ScaleType):
 
         self.call_index = self.get_next_bytes(2).hex()
 
+        print("call_index: ", f'0x{self.call_index}')
+
         self.call_module, self.call_function = self.metadata.call_index[self.call_index]
+
+        print("call_function: ", self.call_function.name)
+        print("call_module: ", self.call_module.name)
 
         call_bytes = bytes.fromhex(self.call_index)
 
