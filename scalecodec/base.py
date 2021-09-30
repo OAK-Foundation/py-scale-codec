@@ -487,6 +487,7 @@ class ScaleDecoder(ABC):
 
     # TODO rename to decode_type (confusing when encoding is introduced)
     def process_type(self, type_string, **kwargs):
+        print('!!!!!!!!!!!!!!!!type_string: ', type_string);
         obj = self.get_decoder_class(type_string, self.data, runtime_config=self.runtime_config, **kwargs)
         obj.decode(check_remaining=False)
         return obj
